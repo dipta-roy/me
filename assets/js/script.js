@@ -396,3 +396,30 @@ document.addEventListener('keydown', (e) => {
 document.addEventListener('mousedown', () => {
     document.body.classList.remove('keyboard-nav');
 });
+
+// ==========================================
+// GITHUB PROJECT FILTERING
+// ==========================================
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.github-card');
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterBtns.forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        btn.classList.add('active');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        projectCards.forEach(card => {
+            if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                card.style.display = 'block'; // Changed to block to match CSS
+                // Add animation for appearing
+                card.style.animation = 'fadeIn 0.5s ease-out forwards';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
