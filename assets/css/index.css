@@ -1401,7 +1401,7 @@ ul {
 .footer-tagline {
     color: var(--color-text-secondary);
     margin-bottom: var(--spacing-xl);
-    max-width: 500px;
+    max-width: 550px;
     margin-left: auto;
     margin-right: auto;
 }
