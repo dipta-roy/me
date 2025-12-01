@@ -282,7 +282,7 @@ ul {
 
 .nav-menu {
     display: flex;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-sm);
     align-items: center;
 }
 
